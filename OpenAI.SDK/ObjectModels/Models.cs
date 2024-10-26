@@ -98,6 +98,10 @@ public static class Models
         Gpt_4_turbo_2024_04_09,
         Gpt_4o,
         Gpt_4o_2024_05_13,
+        Gpt_4o_2024_08_06,
+        Gpt_4o_mini,
+        Gpt_4o_mini_2024_07_18,
+        Chatgpt_4o_latest,
 
         WhisperV1,
 
@@ -109,7 +113,11 @@ public static class Models
 
         Text_moderation_007,
         Text_moderation_latest,
-        Text_moderation_stable
+        Text_moderation_stable,
+        O1_preview,
+        O1_preview_2024_09_12,
+        O1_mini,
+        O1_mini_2024_09_12
     }
 
     public enum Subject
@@ -207,18 +215,48 @@ public static class Models
     public static string Gpt_4_turbo_2024_04_09 => "gpt-4-turbo-2024-04-09";
 
     /// <summary>
-    ///     Our most advanced, multimodal flagship model that’s cheaper and faster than GPT-4 Turbo.
-    ///     Currently points to gpt-4o-2024-05-13.
-    ///     128,000 tokens	Up to Oct 2023
+    ///    GPT-4o: Our high-intelligence flagship model for complex, multi-step tasks. GPT-4o is cheaper and faster than GPT-4 Turbo. Currently points to gpt-4o-2024-08-06.
+    /// Context Window: 128,000 tokens
+    /// Max output tokens: 16,384 tokens
+    /// Training data: Up to Oct 2023
     /// </summary>
     public static string Gpt_4o => "gpt-4o";
 
     /// <summary>
-    ///     Our most advanced, multimodal flagship model that’s cheaper and faster than GPT-4 Turbo.
-    ///     Currently points to gpt-4o-2024-05-13.
-    ///     128,000 tokens	Up to Oct 2023
+    ///    Original gpt-4o snapshot from May 13, 2024.
+    /// Context Window: 128,000 tokens
+    /// Max output tokens: 4,096 tokens
+    /// Training data: Up to Oct 2023
     /// </summary>
     public static string Gpt_4o_2024_05_13 => "gpt-4o-2024-05-13";
+    /// <summary>
+    /// Latest snapshot that supports Structured Outputs. gpt-4o currently points to this version.
+    /// Context Window: 128,000 tokens
+    /// Max output tokens: 16,384 tokens
+    /// Training data: Up to Oct 2023
+    /// </summary>
+    public static string Gpt_4o_2024_08_06 => "gpt-4o-2024-08-06";
+
+    /// <summary>
+    ///     Our affordable and intelligent small model for fast, lightweight tasks.
+    ///     GPT-4o mini is cheaper and more capable than GPT-3.5 Turbo.
+    ///     Currently points to gpt-4o-mini-2024-07-18.
+    ///     128,000 tokens Up to Oct 2023
+    /// </summary>
+    public static string Gpt_4o_mini => "gpt-4o-mini";
+
+    /// <summary>
+    ///     Our affordable and intelligent small model for fast, lightweight tasks.
+    ///     GPT-4o mini is cheaper and more capable than GPT-3.5 Turbo.
+    ///     Currently points to gpt-4o-mini-2024-07-18.
+    ///     128,000 tokens Up to Oct 2023
+    /// </summary>
+    public static string Gpt_4o_mini_2024_07_18 => "gpt-4o-mini-2024-07-18";
+
+    /// <summary>
+    ///     Dynamic model continuously updated to the current version of GPT-4o in ChatGPT. <a href="https://platform.openai.com/docs/models#4ofootnote">Intended for research and evaluation [1]</a>.
+    /// </summary>
+    public static string Chatgpt_4o_latest => "chatgpt-4o-latest";
 
 
     public static string Ada => "ada";
@@ -366,6 +404,22 @@ public static class Models
     public static string Tts_1_hd => "tts-1-hd";
 
     /// <summary>
+    ///     Reasoning model designed to solve hard problems across domains.
+    ///     Released in Sep 2024.
+    /// </summary>
+    public static string O1_preview => "o1-preview";
+
+    /// <summary>
+    ///     Faster and cheaper reasoning model particularly good at coding, math, and science.
+    ///     Released in Sep 2024.
+    /// </summary>
+    public static string O1_mini => "o1-mini";
+
+    public static string O1_preview_2024_09_12 => "o1-preview-2024-09-12";
+
+    public static string O1_mini_2024_09_12 => "o1-mini-2024-09-12";
+
+    /// <summary>
     ///     This method does not guarantee returned model exists.
     /// </summary>
     /// <param name="subject"></param>
@@ -457,11 +511,19 @@ public static class Models
             Model.Gpt_4_turbo_2024_04_09 => Gpt_4_turbo_2024_04_09,
             Model.Gpt_4o => Gpt_4o,
             Model.Gpt_4o_2024_05_13 => Gpt_4o_2024_05_13,
+            Model.Gpt_4o_2024_08_06 => Gpt_4o_2024_08_06,
+            Model.Gpt_4o_mini => Gpt_4o_mini,
+            Model.Gpt_4o_mini_2024_07_18 => Gpt_4o_mini_2024_07_18,
+            Model.Chatgpt_4o_latest => Chatgpt_4o_latest,
             Model.Tts_1 => Tts_1,
             Model.Tts_1_hd => Tts_1_hd,
             Model.Text_moderation_007 => TextModeration007,
             Model.Text_moderation_latest => TextModerationLatest,
             Model.Text_moderation_stable => TextModerationStable,
+            Model.O1_mini => O1_mini,
+            Model.O1_mini_2024_09_12 => O1_mini_2024_09_12,
+            Model.O1_preview => O1_preview,
+            Model.O1_preview_2024_09_12 => O1_preview_2024_09_12,
             _ => throw new ArgumentOutOfRangeException(nameof(model), model, null)
         };
     }

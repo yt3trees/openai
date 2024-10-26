@@ -1,13 +1,12 @@
-
-# .NET SDK for OpenAI
-⭐ We appreciate your star, it helps!  
- 
-[![Discord Shield](https://discord.com/api/guilds/1250841506785529916/widget.png?style=shield)](https://discord.gg/rE9uVp52) *(If the invite link doesn't work, ping me in discussions.)*  
-We have a very new Discord channel. Please come and help us build the .NET AI community.
+![Betalgo Ranul OpenAI Github Readme banner](https://github.com/user-attachments/assets/ca87b21f-e2a3-4bf2-88ad-4610bda6dfd6)
 
 ## Overview
-A .NET SDK for accessing OpenAI's API, provided as a community library. This SDK allows you to integrate OpenAI's capabilities into your .NET applications with ease.
+A .NET Library for accessing OpenAI's API, provided as a community library. This Library allows you to integrate OpenAI's capabilities into your .NET applications with ease.
 
+⭐ We appreciate your star, it helps! ![GitHub Repo stars](https://img.shields.io/github/stars/betalgo/openai)  
+ #### Community Links
+ We have a very new [![Discord](https://img.shields.io/discord/1250841506785529916?label=Discord)](https://discord.gg/gfgHsWnGxy) and [![Static Badge](https://img.shields.io/badge/Reddit-BetalgoDevelopers-orange)](https://www.reddit.com/r/BetalgoDevelopers) channel. Please come and help us build the .NET AI community.
+ 
 ### Install Packages
 #### Core Library
 [![Betalgo.OpenAI](https://img.shields.io/nuget/v/Betalgo.OpenAI?style=for-the-badge)](https://www.nuget.org/packages/Betalgo.OpenAI/)
@@ -116,10 +115,24 @@ Due to time constraints, not all methods have been thoroughly tested or fully do
 Needless to say, I cannot accept responsibility for any damage caused by using the library.
 
 ## Changelog
-### 8.6.0
-- Fixed Azure Assistant URLs.
-- Updated library logo.
-- Added support for tool resources in Assistant response.
+### 8.7.2
+- Fixed incorrect Azure Urls. 
+- Token usage response extended with `PromptTokensDetails`, `audio_tokens` and `cached_tokens`.
+- Model list extended with `Gpt_4o_2024_08_06` and `Chatgpt_4o_latest`.
+
+### 8.7.1 
+- moved `strict` paremeter from `ToolDefinition` to `FunctionDefinition`
+
+### 8.7.0
+- Added Support for o1 reasing models (`o1-mini` and `o1-preview`). 
+- Added `MaxCompletionTokens` for `chat completions`.
+- Added support for `ParallelToolCalls` for `chat completions`.
+- Added support for `ServiceTier` for `chat completions`.
+- Added support for `ChunkingStrategy` in `Vector Store` and `Vector Store Files`.
+- Added support for `Strict` in `ToolDefinition`.
+- Added support for `MaxNumberResults` and `RankingOptions` for `FileSearchTool`.
+- Added support for `ReasoningTokens` for `token usage`.
+- Added support for `ResponseFormatOneOfType` for `AssistantResponse.cs`.
 
 ### [More Change Logs](https://github.com/betalgo/openai/wiki/Change-Logs)
 ---

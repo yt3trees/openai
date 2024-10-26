@@ -60,12 +60,14 @@ await ChatCompletionTestHelper.RunSimpleCompletionStreamTest(sdk);
 //await ChatCompletionTestHelper.RunChatFunctionCallTestAsStream(sdk);
 //await ChatCompletionTestHelper.RunSimpleCompletionStreamWithUsageTest(sdk);
 //await BatchTestHelper.RunBatchOperationsTest(sdk);
+//await ChatCompletionTestHelper.RunChatWithJsonSchemaResponseFormat(sdk);
 
 // Whisper
 //await AudioTestHelper.RunSimpleAudioCreateTranscriptionTest(sdk);
 //await AudioTestHelper.RunSimpleAudioCreateTranslationTest(sdk);
 //await AudioTestHelper.RunSimpleAudioCreateSpeechTest(sdk);
 
+//await ChatCompletionTestHelper.RunChatReasoningModel(sdk);
 //await ModelTestHelper.FetchModelsTest(sdk);
 //await EditTestHelper.RunSimpleEditCreateTest(sdk);
 //await ImageTestHelper.RunSimpleCreateImageTest(sdk);
