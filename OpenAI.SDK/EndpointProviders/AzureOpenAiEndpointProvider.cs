@@ -28,7 +28,7 @@ internal class AzureOpenAiEndpointProvider : IOpenAiEndpointProvider
 
     public string FileDelete(string fileId)
     {
-        return $"{Prefix}/files/{fileId}{AzureVersionQueryString}";
+        return $"{AssistantPrefix}/files/{fileId}{AzureVersionQueryString}";
     }
 
     public string CompletionCreate()
@@ -43,7 +43,7 @@ internal class AzureOpenAiEndpointProvider : IOpenAiEndpointProvider
 
     public string ModelsList()
     {
-        return $"{Prefix}/models{AzureVersionQueryString}";
+        return $"{AssistantPrefix}/models{AzureVersionQueryString}";
     }
 
     public string FilesList()
@@ -58,12 +58,12 @@ internal class AzureOpenAiEndpointProvider : IOpenAiEndpointProvider
 
     public string FileRetrieve(string fileId)
     {
-        return $"{Prefix}/files/{fileId}{AzureVersionQueryString}";
+        return $"{AssistantPrefix}/files/{fileId}{AzureVersionQueryString}";
     }
 
     public string FileRetrieveContent(string fileId)
     {
-        return $"{Prefix}/files/{fileId}/content{AzureVersionQueryString}";
+        return $"{AssistantPrefix}/files/{fileId}/content{AzureVersionQueryString}";
     }
 
     public string FineTuneCreate()
@@ -471,6 +471,6 @@ internal class AzureOpenAiEndpointProvider : IOpenAiEndpointProvider
 
     private string Files()
     {
-        return $"{Prefix}/files{AzureVersionQueryString}";
+        return $"{AssistantPrefix}/files{AzureVersionQueryString}";
     }
 }

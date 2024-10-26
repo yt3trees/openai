@@ -118,4 +118,106 @@ public record RunStepDetails
         [JsonPropertyName("message_id")]
         public string MessageId { get; set; }
     }
+
+    /// <summary>
+    /// An array of tool calls the run step was involved in. These can be associated with
+    /// one of three types of tools: code_interpreter, file_search, or function.
+    /// </summary>
+    [JsonPropertyName("tool_calls")]
+    public List<Tool>? toolCalls { get; set; }
+
+    public class Tool
+    {
+        /// <summary>
+        /// The ID of the tool call.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// The type of tool call.
+        /// </summary>
+        [JsonPropertyName("type")]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Details of the Code Interpreter tool call the run step was involved in.
+        /// </summary>
+        [JsonPropertyName("code_interpreter")]
+        public InputOutput? CodeInterpreter { get; set; }
+
+        /// <summary>
+        /// For now, this is always going to be an empty object.
+        /// </summary>
+        [JsonPropertyName("file_search")]
+        public object? FileSearch { get; set; }
+
+        /// <summary>
+        /// The definition of the function that was called.
+        /// </summary>
+        [JsonPropertyName("function")]
+        public FunctionObject? Function { get; set; }
+
+        public class InputOutput
+        {
+            /// <summary>
+            /// The input to the Code Interpreter tool call.
+            /// </summary>
+            [JsonPropertyName("input")]
+            public string? Input { get; set; }
+
+            /// <summary>
+            /// The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items,
+            /// including text (logs) or images (image).
+            /// Each of these are represented by a different object type.
+            /// </summary>
+            [JsonPropertyName("outputs")]
+            public List<OutputsObject>? Outputs { get; set; }
+
+            public class OutputsObject
+            {
+                [JsonPropertyName("type")]
+                public string? Type { get; set; }
+
+                /// <summary>
+                /// The text output from the Code Interpreter tool call.
+                /// </summary>
+                [JsonPropertyName("logs")]
+                public string? Logs { get; set; }
+
+                [JsonPropertyName("image")]
+                public ImageObject? Image { get; set; }
+
+                public class ImageObject
+                {
+                    /// <summary>
+                    /// The file ID of the image.
+                    /// </summary>
+                    [JsonPropertyName("file_id")]
+                    public string? FileId { get; set; }
+                }
+            }
+        }
+
+        public class FunctionObject
+        {
+            /// <summary>
+            /// The name of the function.
+            /// </summary>
+            [JsonPropertyName("name")]
+            public string? Name { get; set; }
+
+            /// <summary>
+            /// The arguments passed to the function.
+            /// </summary>
+            [JsonPropertyName("arguments")]
+            public string? Arguments { get; set; }
+
+            /// <summary>
+            /// The output of the function. This will be null if the outputs have not been submitted yet.
+            /// </summary>
+            [JsonPropertyName("output")]
+            public string? Output { get; set; }
+        }
+    }
 }

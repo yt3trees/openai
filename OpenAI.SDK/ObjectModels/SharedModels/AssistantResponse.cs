@@ -69,4 +69,10 @@ public record AssistantResponse : BaseResponse, IOpenAiModels.IId, IOpenAiModels
     /// </summary>
     [JsonPropertyName("tool_resources")]
     public ToolResources? ToolResources { get; set; }
+    
+    [JsonPropertyName("top_p")]
+    public double TopP { get; set; }
+
+    [JsonPropertyName("temperature")]
+    public double Temperature { get; set; }
 }
